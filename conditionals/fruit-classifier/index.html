@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fruit Category Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f8ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 200px;
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 10px 15px;
+      font-size: 16px;
+      background: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #006400;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Fruit Category Checker</h2>
+
+  <form id="fruitForm">
+    <input type="text" id="fruitInput" placeholder="Enter a fruit..." required>
+    <button type="submit">Check Category</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    document.getElementById("fruitForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      let fruit = document.getElementById("fruitInput").value.trim().toLowerCase();
+      let category;
+
+      switch (fruit) {
+        case "orange":
+        case "lemon":
+        case "lime":
+        case "grapefruit":
+          category = "Citrus";
+          break;
+
+        case "strawberry":
+        case "blueberry":
+        case "raspberry":
+        case "blackberry":
+          category = "Berry";
+          break;
+
+        case "banana":
+        case "mango":
+        case "pineapple":
+        case "papaya":
+          category = "Tropical";
+          break;
+
+        case "apple":
+        case "pear":
+        case "peach":
+        case "plum":
+          category = "Pome/Stone Fruit";
+          break;
+
+        case "watermelon":
+        case "cantaloupe":
+        case "honeydew":
+          category = "Melon";
+          break;
+
+        default:
+          category = "Unknown category or not a fruit in our list.";
+      }
+
+      document.getElementById("result").textContent = "Category: " + category;
+    });
+  </script>
+
+</body>
+</html>
