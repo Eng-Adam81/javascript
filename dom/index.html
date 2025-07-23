@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+    <style>
+        .niceText{
+            color: blue;
+        }
+    </style> 
+</head>
+<body>
+   <h1 id="firstH1" name = "kankobaad" class="niceText">This h1 was created by me</h1>
+   <h1 id="secondH1">This h1 <u>was</u> created by me</h1>
+   <p name = "kankobaad" class="niceText">another paragraph</p>
+
+   <script>
+    // for (let i = 0; i < 100; i++) {
+    //      let anotherH1 = document.createElement("h1");
+    // anotherH1.textContent = i + " This h1 was created by JavaScript";
+    // anotherH1.style.color = "red";
+    // document.body.appendChild(anotherH1);
+    
+    //    }
+    //  let h1IWrote = document.getElementById("firstH1");
+    //  h1IWrote.style.color = "red";
+    //  h1IWrote.innerHTML= "I have changed the content of this h1 <u>using</u> javascript";
+    //  let otherH1 = document.getElementById("secondH1");
+    //  document.body.removeChild(otherH1)
+
+    // let allkankobaads = document.getElementsByName("kankobaad");
+    // allkankobaads[0].style.fontSize = "100px";
+    // allkankobaads[1].style.color = "green";
+
+    // let allkankobaads = document.getElementsByTagName("h1");
+    // allkankobaads[0].style.fontSize = "100px";
+    // allkankobaads[1].style.color = "green";
+
+
+    //   let allkankobaads = document.getElementsByClassName("niceText");
+    // allkankobaads[0].style.fontSize = "100px";
+    // allkankobaads[1].style.fontSize = "100px";
+
+    // let allkankobaads = document.guerySelector("#firstH1");
+    // allkankobaads.style.fontSize = "100px";
+
+    //  let allkankobaads = document.guerySelector("p");
+    // allkankobaads.style.fontSize = "100px";
+
+    //  let allkankobaads = document.guerySelector(".niceText");
+    // allkankobaads.style.fontSize = "100px";
+
+
+    let allkankobaads = document.guerySelectorAll("#firstH1");
+    allkankobaads[1].style.fontSize = "100px";
+
+    //  let allkankobaads = document.guerySelectorAll("p");
+    // allkankobaads[1].style.fontSize = "100px";
+
+    //  let allkankobaads = document.guerySelectorAll(".niceText");
+    // allkankobaads[0].style.fontSize = "100px";
+    
+     
+
+
+
+
+   </script> 
+</body>
+</html>
