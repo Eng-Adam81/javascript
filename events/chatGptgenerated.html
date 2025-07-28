@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Events Demo</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    .box { padding: 10px; border: 1px solid #ccc; margin-bottom: 10px; }
+    input, select, button, textarea { margin: 5px 0; display: block; }
+  </style>
+</head>
+<body onload="onPageLoad()">
+
+  <h1>JavaScript Events Demo</h1>
+
+  <!-- onclick -->
+  <div class="box">
+    <button onclick="onClickHandler()">Click Me</button>
+  </div>
+
+  <!-- ondblclick -->
+  <div class="box">
+    <button ondblclick="onDoubleClick()">Double Click Me</button>
+  </div>
+
+  <!-- onmouseover and onmouseout -->
+  <div class="box">
+    <div onmouseover="onMouseOver(this)" onmouseout="onMouseOut(this)" style="width:200px; height:50px; background-color:lightblue;">
+      Hover over me
+    </div>
+  </div>
+
+  <!-- onchange -->
+  <div class="box">
+    <select onchange="onChangeHandler(this)">
+      <option value="">Choose a fruit</option>
+      <option value="apple">Apple</option>
+      <option value="banana">Banana</option>
+      <option value="orange">Orange</option>
+    </select>
+  </div>
+
+  <!-- oninput -->
+  <div class="box">
+    <input type="text" oninput="onInputHandler(this)" placeholder="Type something..." />
+  </div>
+
+  <!-- onkeydown and onkeyup -->
+  <div class="box">
+    <input type="text" onkeydown="onKeyDownHandler(event)" onkeyup="onKeyUpHandler(event)" placeholder="Press keys..." />
+  </div>
+
+  <!-- onfocus and onblur -->
+  <div class="box">
+    <input type="text" onfocus="onFocusHandler(this)" onblur="onBlurHandler(this)" placeholder="Focus on me" />
+  </div>
+
+  <!-- onsubmit -->
+  <div class="box">
+    <form onsubmit="onSubmitHandler(event)">
+      <input type="text" placeholder="Enter name" required />
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    function onPageLoad() {
+      console.log("Page has loaded (onload)");
+    }
+
+    function onClickHandler() {
+      alert("Button clicked (onclick)");
+    }
+
+    function onDoubleClick() {
+      alert("Button double clicked (ondblclick)");
+    }
+
+    function onMouseOver(el) {
+      el.style.backgroundColor = "lightgreen";
+      console.log("Mouse over (onmouseover)");
+    }
+
+    function onMouseOut(el) {
+      el.style.backgroundColor = "lightblue";
+      console.log("Mouse out (onmouseout)");
+    }
+
+    function onChangeHandler(select) {
+      alert("Changed to: " + select.value + " (onchange)");
+    }
+
+    function onInputHandler(input) {
+      console.log("Typing: " + input.value + " (oninput)");
+    }
+
+    function onKeyDownHandler(e) {
+      console.log("Key down: " + e.key + " (onkeydown)");
+    }
+
+    function onKeyUpHandler(e) {
+      console.log("Key up: " + e.key + " (onkeyup)");
+    }
+
+    function onFocusHandler(el) {
+      el.style.borderColor = "green";
+      console.log("Input focused (onfocus)");
+    }
+
+    function onBlurHandler(el) {
+      el.style.borderColor = "#ccc";
+      console.log("Input lost focus (onblur)");
+    }
+
+    function onSubmitHandler(event) {
+      event.preventDefault(); // prevent page refresh
+      alert("Form submitted (onsubmit)");
+    }
+  </script>
+
+</body>
+</html>
